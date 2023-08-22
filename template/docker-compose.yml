@@ -1,0 +1,53 @@
+version: "3"
+services:
+  challenge01:
+    image: chainflag/solidctf:1.0.0
+    container_name: test_challenge_01
+    restart: unless-stopped
+    ports:
+      - "20001:20000"
+    env_file:
+      - .env
+    volumes:
+      - ./flag01.txt:/ctf/flag.txt
+      - ./contracts01:/ctf/contracts
+      - ./challenge01.yml:/ctf/challenge.yml
+
+  challenge02:
+    image: chainflag/solidctf:1.0.0
+    container_name: test_challenge_02
+    restart: unless-stopped
+    ports:
+      - "20002:20000"
+    env_file:
+      - .env
+    volumes:
+      - ./flag02.txt:/ctf/flag.txt
+      - ./contracts02:/ctf/contracts
+      - ./challenge02.yml:/ctf/challenge.yml
+
+  ethereum:
+    image: chainflag/fogeth:latest
+    restart: unless-stopped
+    container_name: test_fogeth
+    ports:
+      - "8546:8545"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data
+      - ./logs:/var/log/nginx
+
+  faucet:
+    image: chainflag/eth-faucet:1.1.0
+    restart: unless-stopped
+    container_name: test_eth_faucet
+    ports:
+      - "8081:8080"
+    links:
+      - ethereum
+    env_file:
+      - .env
+    command: -wallet.provider http://ethereum:8545 -wallet.privkey ${ALLOC_ADDRESS_PRIVATE_KEY} -faucet.minutes 1
+    depends_on:
+      - ethereum
