@@ -70,7 +70,12 @@
 
 - [x] 关于区块链浏览器与查询：可以查询，通过rpc get transaction by hash，暂时没有区块链浏览器
 
-- [x] 关于完成题目：（1）可以检查event是否触发。（2）检验方法一定要写成`isSolved()`吗如下？回答：在你不改solidctf代码的情况下，是的。
+- [x] 关于完成题目：
+
+  - [x] 在`isSolved()`检测中，不得包含msg.sender，因为当其他人调用`isSolved()`检测玩家是否完成的时候，msg.sender并不是玩家，这会造成nc第四步检测的时候一直为false
+
+  - [x] （1）可以检查event是否触发。（2）检验方法一定要写成`isSolved()`吗如下？回答：在你不改solidctf代码的情况下，是的。
+
 
   ```solidity
   function isSolved() public view returns (bool);
@@ -83,6 +88,8 @@
   ```yml
   command: -wallet.provider http://ethereum:8545 -wallet.privkey ${ALLOC_ADDRESS_PRIVATE_KEY} -faucet.minutes 1
   ```
+
+- [x] 关于交易一直卡住：如果出现metamask的交易一直在排队pending，可能是你重复部署的docker的时候，上次的data和logs文件没删除，启动链就不会重置。导致根据URL求出的链ID一直都是相同的。解决方法：删除data和logs文件再次部署
 
 ## 部署私链Demo
 
