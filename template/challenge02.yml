@@ -1,8 +1,7 @@
-contract: test02 # The class name of the challenge contract
+contract: setUp2 # The class name of the challenge contract
 
 description: |
-  Can you make the isSolved() function return true?
-
+  Can you steal the eth ?
 constructor:
   args: []        # The argument(s) to be passed to the contract constructor
   value: 0               # The amount of wei to be sent to the contract upon deployment

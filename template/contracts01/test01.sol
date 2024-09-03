@@ -526,7 +526,7 @@ contract StakingReward {
     }
 }
 
-contract test01 {
+contract setUp1 {
     StakingReward public staking;
     address public player;
     SCTF public sctf;

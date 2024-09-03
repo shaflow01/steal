@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.9;
 
-contract test02 {
+contract setUp2 {
     bytes constant target = hex"53be43be54be46be";
     bool isDeposit;
     bool isWithdraw;
 
+    constructor() {}
     function deposit() public payable {
         require(msg.value == 5);
         require(!isDeposit);
