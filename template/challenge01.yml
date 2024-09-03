@@ -1,4 +1,4 @@
-contract: test01 # The class name of the challenge contract
+contract: setUp1 # The class name of the challenge contract
 
 description: |
   Can you reduce the rewards in the staking pool?
