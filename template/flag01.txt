@@ -1,1 +1,1 @@
-flag{flag01}
+SCTF{a4b9_j2k8_q1w6x7z}

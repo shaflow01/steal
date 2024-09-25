@@ -2,7 +2,7 @@ version: "3"
 services:
   challenge01:
     image: chainflag/solidctf:1.0.0
-    container_name: test_challenge_01
+    container_name: stake
     restart: unless-stopped
     ports:
       - "20001:20000"
@@ -12,19 +12,6 @@ services:
       - ./flag01.txt:/ctf/flag.txt
       - ./contracts01:/ctf/contracts
       - ./challenge01.yml:/ctf/challenge.yml
-
-  challenge02:
-    image: chainflag/solidctf:1.0.0
-    container_name: test_challenge_02
-    restart: unless-stopped
-    ports:
-      - "20002:20000"
-    env_file:
-      - .env
-    volumes:
-      - ./flag02.txt:/ctf/flag.txt
-      - ./contracts02:/ctf/contracts
-      - ./challenge02.yml:/ctf/challenge.yml
 
   ethereum:
     image: chainflag/fogeth:latest
