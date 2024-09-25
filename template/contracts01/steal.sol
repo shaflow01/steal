@@ -3,7 +3,6 @@ pragma solidity 0.8.9;
 
 contract setUp2 {
     bytes constant target = hex"53be43be54be46be";
-    bool isDeposit;
     bool isWithdraw;
 
     constructor() payable {}
