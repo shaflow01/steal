@@ -2,7 +2,7 @@ version: "3"
 services:
   challenge01:
     image: chainflag/solidctf:1.0.0
-    container_name: stake
+    container_name: steal
     restart: unless-stopped
     ports:
       - "20001:20000"

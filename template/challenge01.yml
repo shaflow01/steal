@@ -1,11 +1,11 @@
 contract: setUp1 # The class name of the challenge contract
 
 description: |
-  Can you reduce the rewards in the staking pool?
+  Can you steal the eth ?
 
 constructor:
   args: []        # The argument(s) to be passed to the contract constructor
-  value: 0               # The amount of wei to be sent to the contract upon deployment
+  value: 5               # The amount of wei to be sent to the contract upon deployment
   #gas: 1000000          # The gas limit to execute the contract constructor, default is the response value of the eth_estimateGas JSON-RPC
 
 show_source: True        # Set to False if you don't want the contract source code to be displayed to players
